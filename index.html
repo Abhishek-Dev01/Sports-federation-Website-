@@ -1,0 +1,765 @@
+<?php
+// Email Submit
+// Note: filter_var() requires PHP >= 5.2.0
+if ( isset($_POST['email']) && isset($_POST['name']) && isset($_POST['subject']) && isset($_POST['message']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
+ 
+  // detect & prevent header injections
+  $test = "/(content-type|bcc:|cc:|to:)/i";
+  foreach ( $_POST as $key => $val ) {
+    if ( preg_match( $test, $val ) ) {
+      exit;
+    }
+  }
+
+$headers = 'From: ' . $_POST["name"] . '<' . $_POST["email"] . '>' . "\r\n" .
+    'Reply-To: ' . $_POST["email"] . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+  //
+  mail( "koshiworld40@gmail.com", "abhisheksingh23200@gmail.com", $_POST['subject'], $_POST['message'], $headers );
+ 
+  //      ^
+  //  Replace with your email 
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- META CHARSET -->
+<meta charset="UTF-8" />
+<!-- META VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- META EDGE -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- META THEME -->
+<meta name="theme-color" content="#000000" />
+<!-- TITLE -->
+<title>WORLD KOSHIKI FEDERATION| Official Website</title>
+<!-- META DESCRIPTION -->
+<meta name="description" content="Peace">
+<!-- META AUTHOR -->
+<meta name="author" content="WORLD KOSHIKI FEDERATION">
+<!-- META KEYWORDS -->
+<meta name="keywords" content="WORLD KOSHIKI FEDERATION"> 
+
+<link rel = "shortcut icon" type = "image/ico" href = "./images/world.ico" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+     
+<div class="preloader">
+	<div class="sk-rotating-plane"></div>
+</div>
+
+<!-- =========================
+     NAVIGATION LINKS     
+============================== -->
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+
+			<a href="index.php" class="navbar-brand">WORLD KOSHIKI FEDERATION</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#intro" class="smoothScroll">Home</a>
+
+
+				</li>
+				<li><a href="news.html" class="smoothScroll">News</a></li>
+				<li><a href="event.html" class="smoothScroll">Events</a></li>
+				<li><a href="gallery.html" class="smoothScroll">Members</a></li>
+				<li><a href="#speakers" class="smoothScroll">Gallery</a></li>
+				<li><a href="contact.html" class="smoothScroll">Contact</a></li>
+			</ul>
+			 <img src="images/world.jpeg" id="icon" >
+			 	</div>
+
+	</div>
+</div>
+
+
+<!-- =========================
+    INTRO SECTION   
+============================== -->
+<section id="intro" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<h3 class="wow bounceIn" data-wow-delay="0.9s"></h3>
+				<h1 class="wow fadeInUp" data-wow-delay="1.6s"></h1>
+				<a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="2.3s">ABOUT US</a>
+				<a href="contact.php" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">CONTACT US</a>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    OVERVIEW SECTION   
+============================== -->
+<section id="overview" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+				<h3>About US</h3>
+				<p>WORD OF THE CHAIRMAN OF WORLD KOSHIKI FEDERATION 
+ </p>
+				<p>
+Dear athletes, officials, practitioners and fans of Koshiki martial art sport,
+It is my great honor to send a message to all of you as a  Chairman of World Koshiki Federation. 
+<p>
+World koshiki federation will strive to unite all Koshiki athletes under one umbrella for a better promotion of our lovely and modern martial art sport. Recognition of national koshiki federations in different countries by their National Olympic Committees and government authorities is one of our priorities.
+</p>
+When we reach many national recognitions, we will be ready to enter big family of sports like GAISF or IOC. 
+<p>
+Until then membership in GAAPSF, ISNO ,WSC, SRE for participation in New Sport Games, Combat Games and ISNO World Games, Global humanitarian Games etc. ISNO World Games that are announced for 2021 in Italy is our present priority.
+</p><p>
+Dear friends, It’s time to use the highest human knowledge and skills in different fields like sport and science, medicine and new technologies to improve the quality of our martial art sport. This will help koshiki be more attractive and healthier for its practitioners. I count on everyone of you to take responsibility and join me in this most important project to develop koshiki sports world wide. 
+</p>
+</b></a></p>
+<p>
+ Chairman:-
+</p>
+Hanshi Hiroshi Hasataka
+<p> 
+World Koshiki Federation</p>
+			</div>
+					
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+				<div class="mma-intro wow fadeInUp" data-wow-delay="0.6s">
+					<video loop autoplay muted >
+						 <source src="videos/kosh.mp4" type="video/mp4">
+					</video>
+
+			   </div>
+			</div>
+
+
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+				<div class="mma-intro wow fadeInUp" data-wow-delay="0.6s">
+					<video loop autoplay muted >
+						 <source src="videos/fight.mp4" type="video/mp4">
+					</video>
+
+			   </div>
+			</div>
+
+
+
+		</div>
+	</div>
+</section>
+
+
+
+ <section id="detail" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInLeft col-md-4 col-sm-4" data-wow-delay="0.3s">
+				<i class="fa fa-group"></i>
+				<h3>65000+ Participants</h3>
+				<p><a href="index.html">WORLD KOSHIKI FEDERATION </a>65000+ total participants through out the worlds.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
+				<i class="fa fa-clock-o"></i>
+				<h3>5000+ Fights</h3>
+				<p><a href="index.html">WORLD KOSHIKI FEDERATION</a>We Provide koshiki tournaments where the world class koshiki black belt fighter participates and fight for the best.</p>
+			</div>
+
+			<div class="wow fadeInRight col-md-4 col-sm-4" data-wow-delay="0.9s">
+				<i class="fa fa-microphone"></i>
+				<h3>100+ Tournaments</h3>
+				<p><a href="index.html">WORLD KOSHIKI FEDERATION </a> Tournaments through out the worlds.</p>
+			</div>
+
+		</div>
+	</div>
+</section> 
+
+
+<!-- =========================
+    VIDEO SECTION   
+============================== -->
+<section id="video" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>Watch Our New Video</h2>
+				<h3>World Koshiki Federation</h3>
+				 <p>Seminar event in japan 2020</p>
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/6ZPT8HW_hyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>Watch Video</h2>
+				<h3>World Koshiki Federation</h3>
+			<p>Kohshiki Art</p> 
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/4CSVJE3BRnQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>World Koshiki Federation</h2>
+				<h3>Seminar Event 2020</h3>
+				<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet consectetuer diam nonummy.</p> -->
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/es4iv3bOTCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>Watch Video</h2>
+				<h3>World Koshiki Federation</h3>
+				<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet consectetuer diam nonummy.</p> -->
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/R9tV29maTms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>Watch Video</h2>
+				<h3>World Koshiki Federation</h3>
+				<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet consectetuer diam nonummy.</p> -->
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Z9eSyiJ6XSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    SPEAKERS SECTION   
+============================== -->
+<section id="speakers" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 wow bounceIn">
+				<div class="section-title">
+					<h2>Gallery</h2>
+				</div>
+			</div>
+
+			<!-- Testimonial Owl Carousel section
+			================================================== -->
+			<div id="owl-speakers" class="owl-carousel">
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+					<div class="speakers-wrapper">
+						<img src="images/img1.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+								
+							</div>
+					</div>
+				</div>
+
+
+								<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+					<div class="speakers-wrapper">
+						<img src="images/img2.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+								
+							</div>
+					</div>
+				</div>
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/2.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+										</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+					<div class="speakers-wrapper">
+						<img src="images/img3.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/4.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/5.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/6.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/img5.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/img7.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>							
+							</div>
+					</div>
+				</div>
+				
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/img6.jpeg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>							
+							</div>
+					</div>
+				</div>
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/9.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/10.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img src="images/11.jpg" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								
+								<h3><a href="index.html">WORLD KOSHIKI FEDERATION</a></h3>
+								<h6>IMAGE</h6>
+							</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    PROGRAM SECTION   
+============================== -->
+<section id="program" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.6s">
+				<div class="section-title">
+					<h2>Our International Partners</h2>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-10 col-sm-10" data-wow-delay="0.9s">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#fday" aria-controls="fday" role="tab" data-toggle="tab">LIST ONE</a></li>
+					<li><a href="#sday" aria-controls="sday" role="tab" data-toggle="tab">LIST TWO</a></li>
+					<li><a href="#aday" aria-controls="aday" role="tab" data-toggle="tab">LIST THREE</a></li>
+
+				</ul>
+				<!-- tab panes -->
+				<div class="tab-content">
+
+					<div role="tabpanel" class="tab-pane active" id="fday">
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/head.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="index.html">World Koshiki Headquater</a>🌎</h3>
+							<p>"OUR SPECIAL PARTNER.”</p>
+						</div>
+
+						<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/council.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://www.worldsportcouncil.com/">World Sport Council</a>🌎</h3>
+							<p>"OUR SPECIAL MEMBER."</p>
+						</div>
+
+						<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/uni.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://thewsu.org/en/">World Sport University</a>🌎</h3>
+							<p>“OUR SPECIAL MEMBER.”</p>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div role="tabpanel" class="tab-pane" id="sday">
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/isno.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://www.isnosport.org/">ISNO SPORTS</a>🌎</h3>
+							<p>“OUR SPECIAL MEMBER”</p>
+						</div>
+
+						<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/gapssf.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://gaapsf.net/">GAAPSF</a>🌎</h3>
+							<p>"OUR SPECAIL MEMBERS."</p>
+						</div>
+
+
+
+							<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/sre.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="sportrecognized.org">Sport Recognized</a>🌎</h3>
+							<p>“OUR SPECAIL MEMBER.”</p>
+						</div>
+					</div>
+
+
+
+					<div role="tabpanel" class="tab-pane" id="aday">
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/iacs.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://combativesports.org/">IACS</a>🌎</h3>
+							<p>"OUR SPECIAL PARTNER.”</p>
+						</div>
+
+						<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/ihfa.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://www.ihfafitness.com/">IHFA</a>🌎</h3>
+							<p>"OUR SPECIAL MEMBER."</p>
+						</div>
+
+						<!-- program divider -->
+						<div class="program-divider col-md-12 col-sm-12"></div>
+
+						<!-- program speaker here -->
+						<div class="col-md-2 col-sm-2">
+							<img src="images/iiamer.jpeg" class="img-responsive" alt="program">
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<h3><a href="https://wmauniversity.com/">IIMAER</a>🌎</h3>
+							<p>“OUR SPECIAL MEMBER.”</p>
+						</div>
+					</div>
+
+				</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+   REGISTER SECTION   
+============================== -->
+ <section id="register" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="0.6s">
+				<h2>Register Here</h2>
+				<h3>WELCOME TO WORLD KOSHIKI FEDERATION</h3>
+				<p>Join Us </p>
+			</div>
+
+			<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
+				<form action="#" method="post">
+					<input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name">
+					<input name="lastname" type="text" class="form-control" id="lastname" placeholder="Last Name">
+					<input name="phone" type="telephone" class="form-control" id="phone" placeholder="Phone Number">
+					<input name="email" type="email" class="form-control" id="email" placeholder="Email Address">
+					<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
+						<input name="submit" type="submit" class="form-control" id="submit" value="REGISTER">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-md-1"></div>
+
+		</div>
+	</div>
+</section> 
+
+
+
+<!-- =========================
+    SPONSORS SECTION   
+============================== -->
+ <section id="sponsors" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow bounceIn col-md-12 col-sm-12">
+				<div class="section-title">
+					<h2>AFFILATED </h2>
+					<p><a href="index.html">World Koshiki Federation</a> is Now affilated to </p>
+				</div>
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.3s">
+				<img src="images/europe.jpeg" class="img-responsive" alt="sponsors">	
+						</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.6s">
+				<img src="images/asia.jpeg" class="img-responsive" alt="sponsors">	
+						</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="0.9s">
+				<img src="images/north.jpeg" class="img-responsive" alt="sponsors">	
+				
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/south.jpeg" class="img-responsive" alt="sponsors">	
+				
+			</div>
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/africa.jpeg" class="img-responsive" alt="sponsors">	
+				
+			</div>
+
+
+			<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/iacs.jpeg" class="img-responsive" alt="sponsors">	
+				<br></br>
+				<br></br>
+		</div>
+
+						<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/ihfa.jpeg" class="img-responsive" alt="sponsors">	
+				<p></p>
+
+										</div>
+
+						<div class="wow fadeInUp col-md-3 col-sm-6 col-xs-6" data-wow-delay="1s">
+				<img src="images/iiamer.jpeg" class="img-responsive" alt="sponsors">	
+
+			</div>
+
+
+		</div>
+	</div>
+</section> 
+
+<!-- =========================
+    CONTACT SECTION   
+============================== -->
+<section id="contact" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="0.9s">
+				<div class="contact_detail">
+					<div class="section-title">
+						<h2>Keep in touch</h2>
+					</div>
+					<form action="" target="_blank" method="post">
+						<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+					  	<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+					  	<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+						<div class="col-md-6 col-sm-10">
+							<input name="submit" type="submit" class="form-control" id="submit" value="SEND">
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    FOOTER SECTION   
+============================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<p class="wow fadeInUp" data-wow-delay="0.6s">Copyright &copy; 2021 WORLD KOSHIKI FEDERATION</p>
+
+				<ul class="social-icon">
+					<li><a href="https://www.facebook.com/World-Koshiki-Federation-102688984415002/" target="_blank" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+					<li><a href="https://www.instagram.com/koshiki_World_Federation_01/" target="_blank" class="fa fa-instagram wow fadeInUp" data-wow-delay="1s"></a></li>
+					<li><a href="https://twitter.com/WKoshiki" target="_blank" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+					<li><a href="https://www.youtube.com/channel/UCjgtHFL9-StUfJbvvA2sWCw" target="_blank" class="fa fa-youtube wow fadeInUp" data-wow-delay="1.6s"></a></li>
+					<li><a href="mailto: koshiworld40@gmail.com" target="_blank" class="fa fa-envelope-o wow fadeInUp" data-wow-delay="1.9s"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s"></a></li>
+				</ul>
+								<p class="wow fadeInUp" data-wow-delay="0.6s">Developed by &copy; <a href="https://cyberbook.info/port.html">Abhishek Singh</a></p>
+	
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+
+<!-- =========================
+     SCRIPTS   
+============================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- Chat bot  -->
+     <script>(function(w, d) { w.CollectId = "6199d68c11c7462f21df6b31"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+</body>
+</html>
